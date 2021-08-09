@@ -38,4 +38,15 @@ public class OrderController {
     }
 
 
+    //getForEntity 返回值中会携带状态码、响应头等等信息 getForObject返回的是json字符串
+    @GetMapping("/consumer/payment/getForEntity/{id")
+    public CommonResult<Payment> getPayment2(@PathVariable("id")long id){
+        ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+        if(entity.getStatusCode().is2xxSuccessful()){
+            return entity.getBody();
+        }
+        else{
+            return new CommonResult<>(444,"操作失败");
+        }
+    }
 }
