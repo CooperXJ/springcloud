@@ -14,7 +14,7 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @Value("${server.port}")
-    private  String serverPort;
+    private String serverPort;
 
     public PaymentController(PaymentService paymentService) {
         this.paymentService = paymentService;
