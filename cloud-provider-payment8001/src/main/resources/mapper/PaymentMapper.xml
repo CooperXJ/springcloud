@@ -6,6 +6,7 @@
         <id column="id" property="id" jdbcType="BIGINT"></id>
         <id column="serial" property="serial" jdbcType="VARCHAR"></id>
     </resultMap>
+
     <insert id="create" parameterType="com.atguigu.springcloud.entities.Payment" useGeneratedKeys="true" keyProperty="id">
         insert into payment(serial) values(#{serial})
     </insert>

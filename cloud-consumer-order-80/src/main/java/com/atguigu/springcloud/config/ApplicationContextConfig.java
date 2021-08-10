@@ -1,22 +1,19 @@
 package com.atguigu.springcloud.config;
 
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @className: ApplicationContextConfig
- * @description:
- * @author: liusCoding
- * @create: 2020-06-04 11:57
+ * @author 薛进
+ * @version 1.0
+ * @Description
+ * @date 2021/8/8 8:44 下午
  */
 @Configuration
 public class ApplicationContextConfig {
-
-    @Bean("restTemplate")
-    @LoadBalanced  //普通的轮询注解
-    public RestTemplate getRestTemplate(){
+    @Bean
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 }
